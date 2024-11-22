@@ -13,7 +13,7 @@ if not mistral_api_key:
 model = "mistral-large-latest"
 client = Mistral(api_key=mistral_api_key)
 
-
+temp_ai = input("choose the number temp for ai, between 0 and 1 \n the more it is the more creative the ai is. \n >> ")
 while True:
     question = input("Ask a question to Mistral (or 'exit' to quit): ")
 
@@ -31,7 +31,7 @@ while True:
                     "content": question,
                 },
             ],
-            temperature=0.7,  # Adjust the temperature if needed
+            temperature=temp_ai,  # Adjust the temperature if needed
         )
 
         print("Mistral's response:")
